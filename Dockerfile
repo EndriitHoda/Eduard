@@ -15,4 +15,4 @@ COPY . .
 EXPOSE 5000
 
 # Run the app with gunicorn (production-ready)
-CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app"]
+CMD exec gunicorn -b 0.0.0.0:${PORT:-5000} app:app
